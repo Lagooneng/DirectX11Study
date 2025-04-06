@@ -1,0 +1,38 @@
+# Visual Studio 관련
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# 빌드 결과
+[Bb]in/
+[Oo]bj/
+Binaries/
+x64/
+
+# Windows 임시/시스템 파일
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Shader 컴파일 산출물 (DirectX 11)
+*.cso
+*.psh
+*.vso
+*.temp
+
+# IntelliSense 캐시 등
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cache
+*.dbmdl
+
+# 로그 파일
+*.log
+
+# Visual Studio Code 설정 (사용 시)
+.vscode/
