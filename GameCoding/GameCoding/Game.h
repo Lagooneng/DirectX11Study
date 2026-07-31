@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 class Game
 {
 public:
@@ -20,6 +21,15 @@ private:
 	void SetViewPort();
 
 private:
+	void CreateGeometry();
+	void CreateInputLayout();
+
+	void CreateVS();
+	void CreatePS();
+
+	void LoadShaderFromFile(const wstring& path, const string& name, const string& version, ComPtr<ID3DBlob>& blob);
+
+private:
 	HWND _hwnd;
 	uint32 _width = 0;
 	uint32 _height = 0;
@@ -36,5 +46,19 @@ private:
 	// Misc
 	D3D11_VIEWPORT _viewport{ 0 };
 	float _clearColor[4] = { 0.5f, 0.5f, 0.5f, 0.5f };
+
+private:
+	// Geometry
+	vector<Vertex> _vertices;
+	ComPtr<ID3D11Buffer> _vertexBuffer;
+	ComPtr<ID3D11InputLayout> _inputLayout;
+
+	// VS
+	ComPtr<ID3D11VertexShader> _vertexShader;
+	ComPtr<ID3DBlob> _vsBlob;
+
+	// PS
+	ComPtr<ID3D11PixelShader> _pixelShader;
+	ComPtr<ID3DBlob> _psBlob;
 };
 
