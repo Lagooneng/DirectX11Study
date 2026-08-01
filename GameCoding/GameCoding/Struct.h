@@ -7,3 +7,9 @@ struct Vertex
 	//Color color;
 	Vec2 uv;
 };
+
+struct TransformData
+{
+	Vec3 offset;
+	float dummy;	// Constant Buffer가 16바이트 정렬 필요
+};
