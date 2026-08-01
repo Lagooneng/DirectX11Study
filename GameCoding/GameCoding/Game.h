@@ -27,6 +27,10 @@ private:
 	void CreateVS();
 	void CreatePS();
 
+	void CreateRasterizerState();
+	void CreateSamplerState();
+	void CreateBlendState();
+
 	void CreateSRV();
 
 	void CreateConstantBuffer();
@@ -63,12 +67,18 @@ private:
 	ComPtr<ID3D11VertexShader> _vertexShader;
 	ComPtr<ID3DBlob> _vsBlob;
 
+	// RS
+	ComPtr<ID3D11RasterizerState> _rasterizerState;
+
 	// PS
 	ComPtr<ID3D11PixelShader> _pixelShader;
 	ComPtr<ID3DBlob> _psBlob;
 
 	// SRV
 	ComPtr<ID3D11ShaderResourceView> _shaderResourceView;
+
+	ComPtr<ID3D11SamplerState> _samplerState;
+	ComPtr<ID3D11BlendState> _blendState;
 
 private:
 	TransformData _transformData;
